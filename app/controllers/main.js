@@ -127,6 +127,21 @@ var Main = function () {
     });
   };
 
+  this.torrent = function (req, resp, params) {
+    var self = this;
+
+    console.log(geddy.config.streamingProcesses);
+
+    self.respond({
+      params: params,
+      streams: geddy.config.streamingProcesses,
+      baseURL: "http://" + req.headers.host
+    }, {
+      format: 'html',
+      template: 'app/views/main/torrent'
+    });
+  };
+
   this.kill = function (req, resp, params) {
     var self = this;
     var rimraf = require('rimraf').sync;

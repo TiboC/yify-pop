@@ -24,6 +24,7 @@ router.get('/shows').to('Shows.index');
 router.get('/show').to('Shows.show');
 router.get('/stream').to('Main.stream');
 router.get('/running').to('Main.running');
+router.get('/torrent').to('Main.torrent');
 router.get('/kill').to('Main.kill');
 
 // Basic routes
